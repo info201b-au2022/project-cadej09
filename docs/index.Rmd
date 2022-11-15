@@ -47,3 +47,10 @@ plot(king_plot)
 ```
 
 By looking at this chart, we can visualize how the crime rates have changed in King County over the last ten years. The crime seems to have been much higher way before the pandemic happened. When the pandemic hit, the crime rates went lower. The crime rates were on a steep decline up until the pandemic. This may be due to the ecomic decline in seattle that was happening around the same years. 
+
+
+```{r type_crime, echo=F}
+plot(type_crime)
+```
+
+When looking at the graph, we can see that there are multiple areas of crime that are demonstrated on daily lives. We can observe through the data set, that theft and robbery is the number one crime in Seattle, Washington. We can also observe different categories ranging with different colors to grasp a better understanding. We can also notice that assault is ranking the second highest among the different categories presented. Through the data set we can oberserve that bribery, gambling violations, and theft have become outliers. Due to this we can see that the graph has a big scale. 
