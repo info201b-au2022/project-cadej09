@@ -1,7 +1,7 @@
 ---
-title: "Your Project Title"
-author: "project team members"
-date: "1/22/2022"
+title: "Safer Washington"
+author: "Cade Jeong, Elizabeth McCrady, Busung Chung, Sanika Gadam"
+date: "AU 2022"
 output: html_document
 ---
 
@@ -9,46 +9,24 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## What is this file for?
+## Introduction
 
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
+## Summary
 
-* Please see Canvas for more details.
+## Tables
 
-## ACCESSING THE /source DIRECTORY
-### Example 1: Source some code and run a function
-```{r}
-# Example 1: Note relative path, which can be read: Up one
-# directory(..), down into source (/source), and 
-# then "source" an R file (data_access.R)
-source("../source/data_access.R")
-data_access_test()
+## Our Charts
+
+### Chart 1: Did the crime get worse or better during the years we suffered from COVID-19?
+
+```{r newplot, echo=FALSE}
+plot(newplot)
 ```
 
-### Example 2: Initialize a variable and then use it
-```{r}
-# Example 1: This function was "sourced" above
-msg <- data_access_test(" Morgan!")
+Looking at this data we can see crime ranging from the beginning of 2018 to November 2022. The data is a little messy but we can see peaks and and declines of the frequency of crime per date. COVID-19 began in late 2019 and since its beginning we see a large peak in the middle of 2020. We also know that during this time was the beginning of the Black Lives Matter movement which might attribute to this peak of crime since there were a lot more people going outside instead of staying inside during quarantine. THe whole chart seems pretty consistent with the frequency of crime and we only see a drop more recent in later 2022.
+
+```{r king_plot, echo=FALSE}
+plot(king_plot)
 ```
 
-> `r msg` Hope you have a good day!! 
-
-## ABOUT THIS FILE: 
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+By looking at this chart, we can visualize how the crime rates have changed in King County over the last ten years. The crime seems to have been much higher way before the pandemic happened. When the pandemic hit, the crime rates went lower. The crime rates were on a steep decline up until the pandemic. This may be due to the ecomic decline in seattle that was happening around the same years. 

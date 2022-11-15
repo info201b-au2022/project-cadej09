@@ -1,0 +1,56 @@
+# Did the crime get worse or better during the years we suffered from COVID-19?
+library("tidyverse")
+
+# spd has until 2022
+spd <- read.csv("../data/SPD_Crime_Data_2008-Present.csv")
+View(spd)
+
+# srs is for 1999-2011
+# srs <- read.csv("https://media.githubusercontent.com/media/info201b-au2022/project-cadej09/main/data/srs_94_19.csv")
+# View(srs)
+#
+# # cdjdb 1990-2020
+# cdjdb <- read.csv("https://media.githubusercontent.com/media/info201b-au2022/project-cadej09/main/data/CJDB90_20.csv")
+# View(cdjdb)
+#
+# # nibrs 2012-2020
+# nibrs <- read.csv("https://media.githubusercontent.com/media/info201b-au2022/project-cadej09/main/data/nibrs_12_20.csv")
+# View(nibrs)
+
+# Data Wrangling time
+# Ignore old ones, I'm working with the new ones now
+#old_spd <- spd %>%
+  #drop_na() %>%
+  #select(Offense.Start.DateTime) %>%
+  #mutate(StartTime = substr(Offense.Start.DateTime, 1, 10)) %>%
+  #mutate(Frequency = frequency(StartTime))
+#return(spd)
+
+#old_pd <- spd %>%
+  #drop_na() %>%
+  #ungroup() %>%
+  #select(StartTime) %>%
+  #group_by(StartTime) %>%
+  #mutate(Frequency = table(StartTime))
+
+# Working with new ideas
+new_spd <- spd %>%
+  drop_na() %>%
+  select(Report.DateTime) %>%
+  mutate(Date = substr(Report.DateTime, 1, 10)) %>%
+  mutate(Frequency = frequency(Date)) %>%
+  return(spd)
+
+new_pd <- new_spd %>%
+  drop_na() %>%
+  ungroup() %>%
+  select(Date) %>%
+  group_by(Date) %>%
+  mutate(Frequency = table(Date)) %>%
+  mutate(Date = as.Date(Date, format="%m/%d/%Y" )) %>%
+  filter(Date >= "2017-12-31")
+
+
+# Plotting Data
+newplot <- ggplot(new_pd, aes(x = Date,y = Frequency)) +
+  geom_line()
