@@ -1,31 +1,23 @@
-install.packages("ggplot2")
-install.packages("tidyr")
 library(stringr)
 library(ggplot2)
 library(tidyr)
 #bring the csv file into the working directory. 
 
-Crimecategories <- read.csv("/Users/wjdqntjd7/Documents/info_201/projects/project-cadej09/data/nibrs_12_20.csv")
+Crimecategories <- read.csv("../data/nibrs_12_20.csv")
 options(max.print = 90000)
 #view the data set
-
-View(Crimecategories)
-
 
 #extract rows that include Seattle
 crimes_in_seattle <- Crimecategories [c(936), ]
 print(crimes_in_seattle)
-View(crimes_in_seattle)
 
 
 # Delete columns that are irrelevant columns 
 crimes_in_seattle1 <- crimes_in_seattle[,-1:-8]
 print(crimes_in_seattle1)
-View(crimes_in_seattle1)
 
 crimes_in_seattle2 <- crimes_in_seattle1 [,-c(9,10,19,20)]
 print(crimes_in_seattle2)
-View(crimes_in_seattle2)
 
 #make an index for each category
 categories <- c("MURDER", "MANSLAUGHTER", "FORCIBLE_SEX", "ASSULT","NON_FORCIBLE_SEX","KIDNAPPING_ABDUCTION", "HUMAN_TRAFFICKING", "VIOL_OF_NO_CONTACT","ARSON", "BIBERY", "BURGLARY", "COUNTERFEITING_FORGERY", "DESTRUCTION_OF_PROPERTY", "EXTORTION_BLACKMAIL", "ROBBERY", "THEFT","DRUG_VIOLATIONS", "GAMBLING_VIOLATION", "PORNOGRAPHY", "PROTITUTION", "WEAPON_LAW_VIOLATION", "ANIMAL_CRUELTY")
@@ -36,7 +28,7 @@ crimes_2020 <- data.frame(
   incidence = c(52, 16, 520, 11632, 4, 147, 14, 1353, 209, 1, 10548, 374, 6641, 106, 1489, 40163, 1021, 1, 40, 29, 614, 28))
 
 #plot the chart
-ggplot(crimes_2020) +
+type_crime <- ggplot(crimes_2020) +
   geom_col(mapping = aes(x = categories, y = incidence, fill = categories))
 
 
