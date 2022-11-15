@@ -12,7 +12,7 @@ library(DT)
 library(kableExtra)
 library(rmarkdown)
 library(knitr)
-source("../source/Chart1.R")
+#source("../source/Chart1.R")
 source("../source/Chart2.R")
 source("../source/Chart3.R")
 source("../source/Summary_Calculation.R")
@@ -25,12 +25,12 @@ source("../source/Summary_Table.R")
 
 ## Tables
 
-```{r cjdb_types_combined, echo=F}
-datatable(cjdb_types_combined)
+```{r cjdb_county_combined, echo=F}
+datatable(cjdb_county_combined)
 ```
 
-```{r cjdb_county_combined, echo=F}
-kable(cjdb_county_combined)
+```{r cjdb_types_combined, echo=F}
+kable(cjdb_types_combined)
 ```
 ## Charts
 
