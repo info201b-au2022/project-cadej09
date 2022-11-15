@@ -1,3 +1,7 @@
+library(tidyverse)
+
+cjdb <- read.csv("../data/CJDB90_20.csv")
+
 cjdb_combined <- cjdb %>%
   mutate(CRIME_TOTALS = SRS_TOTAL + NIB_TOTAL,
          ARREST_TOTALS = JRR_TOTAL + JRN_TOTAL + ARR_TOTAL + ARN_TOTAL,
@@ -21,19 +25,7 @@ cjdb_combined <- cjdb %>%
          "WEAPVIOL_TOTALS" = "NIB_WEAPVIOL") %>%
   select(year, county, matches("TOTALS"), ARREST_RATIO)
 
-cjdb_year_combined <- cjdb_combined %>%
-  filter(county == "STATE")
-
-cjdb_county_combined <- cjdb_combined %>%
-  filter(county != "STATE PATROL", county != "STATE") %>%
-  group_by(county) %>%
-  summarise(across(c(CRIME_TOTALS, ARREST_TOTALS), sum)) %>%
+cjdb_combined_table <- cjdb_combined %>%
+  group_by(year, county) %>%
+  summarise_all(sum) %>%
   mutate(ARREST_RATIO = ARREST_TOTALS/CRIME_TOTALS)
-
-cjdb_types_combined <- subset(cjdb_year_combined, 
-                              select = -c(year, CRIME_TOTALS, ARREST_TOTALS, ARREST_RATIO))
-cjdb_types_combined<- cjdb_types_combined %>% 
-  group_by(county) %>%
-  summarize_all(sum)
-cjdb_types_combined$MOST_COMMON <- colnames(cjdb_types_combined)[apply(cjdb_types_combined,1,which.max)]
-cjdb_types_combined$LEAST_COMMON <- colnames(cjdb_types_combined)[apply(cjdb_types_combined,1,which.min)]
