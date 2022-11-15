@@ -7,6 +7,16 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(DT)
+library(kableExtra)
+library(rmarkdown)
+library(knitr)
+source("../source/Chart1.R")
+source("../source/Chart2.R")
+source("../source/Chart3.R")
+source("../source/Summary_Calculation.R")
+source("../source/Summary_Table.R")
 ```
 
 ## Introduction
@@ -15,11 +25,18 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Tables
 
-## Our Charts
+```{r cjdb_types_combined, echo=F}
+datatable(cjdb_types_combined)
+```
+
+```{r cjdb_county_combined, echo=F}
+kable(cjdb_county_combined)
+```
+## Charts
 
 ### Chart 1: Did the crime get worse or better during the years we suffered from COVID-19?
 
-```{r newplot, echo=FALSE}
+```{r newplot, echo=F}
 plot(newplot)
 ```
 

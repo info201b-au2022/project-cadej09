@@ -38,8 +38,7 @@ new_spd <- spd %>%
   drop_na() %>%
   select(Report.DateTime) %>%
   mutate(Date = substr(Report.DateTime, 1, 10)) %>%
-  mutate(Frequency = frequency(Date)) %>%
-  return(spd)
+  mutate(Frequency = frequency(Date)) 
 
 new_pd <- new_spd %>%
   drop_na() %>%

@@ -1,10 +1,3 @@
-library(tidyverse)
-
-cjdb <- read.csv("../data/CJDB90_20.csv")
-nibrs <- read.csv("../data/nibrs_12_20.csv")
-srs <- read.csv("../data/srs_94_19.csv")
-spd <- read.csv("../data/SPD_Crime_Data_08_Present.csv")
-
 cjdb_combined <- cjdb %>%
   mutate(CRIME_TOTALS = SRS_TOTAL + NIB_TOTAL,
          ARREST_TOTALS = JRR_TOTAL + JRN_TOTAL + ARR_TOTAL + ARN_TOTAL,
@@ -44,13 +37,3 @@ cjdb_types_combined<- cjdb_types_combined %>%
   summarize_all(sum)
 cjdb_types_combined$MOST_COMMON <- colnames(cjdb_types_combined)[apply(cjdb_types_combined,1,which.max)]
 cjdb_types_combined$LEAST_COMMON <- colnames(cjdb_types_combined)[apply(cjdb_types_combined,1,which.min)]
-
-  
-spd_detailed_grouped <- spd %>%
-  group_by(Crime.Against.Category, Offense.Parent.Group, Offense) %>%
-  tally() %>%
-  ungroup()
-
-spd_broad_grouped <- spd %>%
-  group_by(Offense.Parent.Group) %>%
-  tally()
