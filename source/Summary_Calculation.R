@@ -39,6 +39,7 @@ cjdb_types_combined <- subset(cjdb_year_combined,
 cjdb_types_combined<- cjdb_types_combined %>% 
   group_by(county) %>%
   summarize_all(sum)
+colnames(cjdb_types_combined) = gsub("_TOTALS", "", colnames(cjdb_types_combined))
 cjdb_types_combined$MOST_COMMON <- colnames(cjdb_types_combined)[apply(cjdb_types_combined,1,which.max)]
 cjdb_types_combined$LEAST_COMMON <- colnames(cjdb_types_combined)[apply(cjdb_types_combined,1,which.min)]
 
@@ -46,26 +47,71 @@ cjdb_types_combined$LEAST_COMMON <- colnames(cjdb_types_combined)[apply(cjdb_typ
 # summary_info.R 
 # A source file that takes in a dataset and returns a list of info about it:
 summary_info <- list()
+
 summary_info$year_most_crime <- cjdb_year_combined %>%
   filter(CRIME_TOTALS == max(CRIME_TOTALS, na.rm = T)) %>%
-  select(year, CRIME_TOTALS, ARREST_TOTALS, ARREST_RATIO)
+  select(year)
+summary_info$crime_2020<- cjdb_year_combined %>%
+  filter(CRIME_TOTALS == max(CRIME_TOTALS, na.rm = T)) %>%
+  filter(year == 2020) %>%
+  select(CRIME_TOTALS)
+
 summary_info$year_least_crime <- cjdb_year_combined %>%
   filter(CRIME_TOTALS == min(CRIME_TOTALS, na.rm = T)) %>%
-  select(year, CRIME_TOTALS, ARREST_TOTALS, ARREST_RATIO)
+  select(year)
+summary_info$crime_2011 <- cjdb_year_combined %>%
+  filter(CRIME_TOTALS == min(CRIME_TOTALS, na.rm = T)) %>%
+  filter(year == 2011) %>%
+  select(CRIME_TOTALS)
+
 summary_info$county_most_crime <- cjdb_county_combined %>%
-  filter(CRIME_TOTALS == max(CRIME_TOTALS, na.rm = T)) 
+  filter(CRIME_TOTALS == max(CRIME_TOTALS, na.rm = T)) %>%
+  select(county)
+summary_info$crime_king <- cjdb_county_combined %>%
+  filter(CRIME_TOTALS == max(CRIME_TOTALS, na.rm = T)) %>%
+  filter(county == "KING") %>%
+  select(CRIME_TOTALS)
+
 summary_info$county_least_crime <- cjdb_county_combined %>%
-  filter(CRIME_TOTALS == min(CRIME_TOTALS, na.rm = T))
+  filter(CRIME_TOTALS == min(CRIME_TOTALS, na.rm = T)) %>% 
+  select(county)
+summary_info$crime_wahkiakum <- cjdb_county_combined %>%
+  filter(CRIME_TOTALS == min(CRIME_TOTALS, na.rm = T)) %>%
+  filter(county == "WAHKIAKUM") %>%
+  select(CRIME_TOTALS)
+
 summary_info$year_most_arrest <- cjdb_year_combined %>%
   filter(ARREST_TOTALS == max(ARREST_TOTALS, na.rm = T)) %>%
-  select(year, CRIME_TOTALS, ARREST_TOTALS, ARREST_RATIO)
+  select(year)
+summary_info$arrest_2007 <- cjdb_year_combined %>%
+  filter(ARREST_TOTALS == max(ARREST_TOTALS, na.rm = T)) %>%
+  filter(year == 2007) %>%
+  select(ARREST_TOTALS)
+
 summary_info$year_least_arrest <- cjdb_year_combined %>%
   filter(ARREST_TOTALS == min(ARREST_TOTALS, na.rm = T)) %>%
-  select(year, CRIME_TOTALS, ARREST_TOTALS, ARREST_RATIO)
+  select(year)
+summary_info$arrest_2020 <- cjdb_year_combined %>%
+  filter(ARREST_TOTALS == min(ARREST_TOTALS, na.rm = T)) %>%
+  filter(year == 2020) %>%
+  select(ARREST_TOTALS)
+
 summary_info$county_most_arrest <- cjdb_county_combined %>%
-  filter(ARREST_TOTALS == max(ARREST_TOTALS, na.rm = T)) 
+  filter(ARREST_TOTALS == max(ARREST_TOTALS, na.rm = T)) %>%
+  select(county)
+summary_info$arrest_king <- cjdb_county_combined %>%
+  filter(ARREST_TOTALS == max(ARREST_TOTALS, na.rm = T)) %>%
+  filter(county == "KING") %>%
+  select(ARREST_TOTALS)
+
 summary_info$county_least_arrest <- cjdb_county_combined %>%
-  filter(ARREST_TOTALS == min(ARREST_TOTALS, na.rm = T))
+  filter(ARREST_TOTALS == min(ARREST_TOTALS, na.rm = T)) %>%
+  select(county)
+summary_info$arrest_wahkiakum <- cjdb_county_combined %>%
+  filter(ARREST_TOTALS == min(ARREST_TOTALS, na.rm = T)) %>%
+  filter(county == "WAHKIAKUM") %>%
+  select(ARREST_TOTALS)
+
 summary_info$most_common_crime_wa <- cjdb_types_combined %>%
   select(MOST_COMMON)
 summary_info$least_common_crime_wa <- cjdb_types_combined %>%

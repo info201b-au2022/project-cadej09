@@ -22,45 +22,58 @@ source("../source/Summary_Table.R")
 ### Introduction
 For our project, we have found and used four different datasets and this rmd file is all about summarizing the datasets to a easily understandable, readable format along with visualizations.
 
+The Datasets:
+
 * *__cjdb__* from [SAC](https://sac.ofm.wa.gov/data) which has 1271 observations and 228 variables containing every possible information about crimes in Washington State from 1990-2020.
 * *__srs__* from [SAC](https://sac.ofm.wa.gov/data) which has 5283 observations and 22 variables containing information about crimes in Washington State that are reported using the SummaryReportingSystem from 1994 - 2018. 
 * *__nibrs__* from [SAC](https://sac.ofm.wa.gov/data) which has 2357 observations and 34 variables containing information about crimes in Washington State that are reported using the NationalIncidentBasedReportingSystem from 2012~.
 * *__spd__* from [SeattleOpenData](https://data.seattle.gov/Public-Safety/SPD-Crime-Data-2008-Present/tazs-3rd5) which originally has 1,011,283 observations and 17 variables containing information about crimes in Seattle reported by the SPD from 2008 - present. This data set gets updated daily. 
 
 ### Summary
+Working with the cjdb data set, we have found some interesting information about the number of crimes and arrests in certain years (sum of all counties) and counties (sum of all years), and the most and the least common types of crimes in Washington State (sum of all years and counties). Here is the summary of those information:
 
+The year with the most number of crimes in Washington State is `r summary_info$year_most_crime`, with `r summary_info$crime_2020` crimes total.
+The year with the least number of crimes in Washington State is `r summary_info$year_least_crime`, with `r summary_info$crime_2011` crimes total.
+The county with the most number of crimes in Washington State is `r summary_info$county_most_crime` county, with `r summary_info$crime_king` crimes total.
+The county with the least number of crimes in Washington State is `r summary_info$county_least_crime` county, with `r summary_info$crime_wahkiakum` crimes total.
+The year with the most number of arrests in Washington State is `r summary_info$year_most_arrest`, with `r summary_info$arrest_2007` arrests total.
+The year with the least number of arrests in Washington State is `r summary_info$year_least_arrest`, with `r summary_info$arrest_2020` arrests total.
+The county with the most number of arrests in Washington State is `r summary_info$county_most_arrest` county, with `r summary_info$arrest_king` arrests total.
+The county with the least number of arrests in Washington State is `r summary_info$county_least_arrest` county, with `r summary_info$arrest_wahkiakum` arrests total.
+The most common type of crime that took place in Washington State is `r summary_info$most_common_crime_wa` which is mostly a motor vehicle theft.
+The least common type of crime that took place in Washington State is `r summary_info$least_common_crime_wa`, which is a shortened name for gamble violence. 
 
 ### Table
 ```{r cjdb_combined_table, echo=F}
 datatable(cjdb_combined_table)
 ```
 
-
+We have made a table that contains a cumulative sum of number of crimes that occurred in Washington State by counties along with cumulative sum of number of arrests. And also with the arrest ratio to see how much of the criminals gets arrested. The numbers that are seen here make sense for some counties but does not make sense for some. The counties that have more arrests than crimes (ARREST_RATIO > 1) are ones that possibly have caught the criminals year(s) after their crime, or caught criminals who escaped from different counties, or maybe arrest people for fun... And the counties that have really low ARREST_RATIO probably means that the crimes were less severe or have a very bad safety to live there. 
 
 ### Charts
 
-#### Chart 1: Did the crime get worse or better during the years we suffered from COVID-19? (line)
+#### Chart 1: Did the crime get worse or better during the years we suffered from COVID-19? (line; Liz)
 ```{r newplot, echo=F, message=FALSE}
 plot(newplot)
 ```
 
 I was using our SPD data from our project proposal. Due to making the data fit again on our repository I had to shorten the csv file but I promise I was working with the whole thing at the time of data wrangling. So now, looking at this data we can see crime ranging from the beginning of 2018 to November 2022. The data is a little messy but we can see peaks and and declines of the frequency of crime per date. COVID-19 began in late 2019 and since its beginning we see a large peak in the middle of 2020. We also know that during this time was the beginning of the Black Lives Matter movement which might attribute to this peak of crime since there were a lot more people going outside instead of staying inside during quarantine. THe whole chart seems pretty consistent with the frequency of crime and we only see a drop more recent in later 2022.
 
-#### Chart 2: How has the crime rate in Washington State changed over the last twenty years? (plot)
+#### Chart 2: How has the crime rate in Washington State changed over the last twenty years? (plot; Sanika (changed and fixed by Cade))
 ```{r wa_years_plot, echo=F, message=FALSE}
 plot(wa_years_plot)
 ```
 
-By looking at this chart, we can visualize how the crime rates have changed in Washington State  over the last twenty years. The crime seems to have been in a severe increase after 2011 ish. With the trendline being so steep, we can tell how much it has been increasing ever since. This could also mean that it will be even higher in the later years. 
+By looking at this chart, we can visualize how the crime rates have changed in Washington State  over the last twenty years. The crime seems to have been in a severe increase after 2011 ish. With the trendline being so steep, we can tell how much it has been increasing ever since and could also tell that it will be even higher in the later years. 
 
-#### Chart 3: What kind of or type of crime is most common in Washington State? (bar)
+#### Chart 3: What kind of or type of crime is most common in Washington State? (bar; Busung)
 ```{r type_crime, echo=F}
 plot(type_crime)
 ```
 
 When looking at the graph, we can see that there are multiple areas of crime that are demonstrated on daily lives. We can observe through the data set, that theft and robbery is the number one crime in Seattle, Washington. We can also observe different categories ranging with different colors to grasp a better understanding. We can also notice that assault is ranking the second highest among the different categories presented. Through the data set we can oberserve that bribery, gambling violations, and theft have become outliers. Due to this we can see that the graph has a big scale.
 
-#### Chart 4: How many crimes occurred in each state in the last twenty years? (map)
+#### Chart 4: How many crimes occurred in each state in the last twenty years? (map; Cade)
 ```{r county_crime, echo=F}
 plot(county_crime)
 ```
