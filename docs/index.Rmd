@@ -5,7 +5,7 @@ date: "AU 2022"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(DT)
@@ -14,6 +14,7 @@ library(knitr)
 source("../source/Chart1.R")
 source("../source/Chart2.R")
 source("../source/Chart3.R")
+source("../source/Chart4.R")
 source("../source/Summary_Calculation.R")
 source("../source/Summary_Table.R")
 ```
@@ -24,7 +25,7 @@ source("../source/Summary_Table.R")
 ## Summary
 
 
-## Tables
+## Table
 
 ```{r cjdb_combined_table, echo=F}
 datatable(cjdb_combined_table)
@@ -32,22 +33,24 @@ datatable(cjdb_combined_table)
 ## Charts
 
 ### Chart 1: Did the crime get worse or better during the years we suffered from COVID-19?
-
-```{r newplot, echo=F}
+```{r newplot, echo=F, message=FALSE}
 plot(newplot)
 ```
-
 I was using our SPD data from our project proposal. Due to making the data fit again on our repository I had to shorten the csv file but I promise I was working with the whole thing at the time of datawrangling. So now, looking at this data we can see crime ranging from the beginning of 2018 to November 2022. The data is a little messy but we can see peaks and and declines of the frequency of crime per date. COVID-19 began in late 2019 and since its beginning we see a large peak in the middle of 2020. We also know that during this time was the beginning of the Black Lives Matter movement which might attribute to this peak of crime since there were a lot more people going outside instead of staying inside during quarantine. THe whole chart seems pretty consistent with the frequency of crime and we only see a drop more recent in later 2022.
 
-```{r wa_years_plot, echo=FALSE}
+### Chart 2: How has the crime rate in Washington State changed over the last twenty years? 
+```{r wa_years_plot, echo=F, message=FALSE}
 plot(wa_years_plot)
 ```
-
 By looking at this chart, we can visualize how the crime rates have changed in Washington State  over the last twenty years. The crime seems to have been in a severe increase after 2011 ish. With the trendline being so steep, we can tell how much it has been increasing ever since. This could also mean that it will be even higher in the later years. 
 
-
+### Chart 3: What kind of or type of crime is most common in Washington State? 
 ```{r type_crime, echo=F}
 plot(type_crime)
 ```
+When looking at the graph, we can see that there are multiple areas of crime that are demonstrated on daily lives. We can observe through the data set, that theft and robbery is the number one crime in Seattle, Washington. We can also observe different categories ranging with different colors to grasp a better understanding. We can also notice that assault is ranking the second highest among the different categories presented. Through the data set we can oberserve that bribery, gambling violations, and theft have become outliers. Due to this we can see that the graph has a big scale.
 
-When looking at the graph, we can see that there are multiple areas of crime that are demonstrated on daily lives. We can observe through the data set, that theft and robbery is the number one crime in Seattle, Washington. We can also observe different categories ranging with different colors to grasp a better understanding. We can also notice that assault is ranking the second highest among the different categories presented. Through the data set we can oberserve that bribery, gambling violations, and theft have become outliers. Due to this we can see that the graph has a big scale. 
+### Chart 4: How many crimes occurred in each state in the last twenty years? 
+```{r county_crime, echo=F}
+plot(county_crime)
+```

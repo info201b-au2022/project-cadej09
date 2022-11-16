@@ -68,4 +68,3 @@ new_pd <- new_spd %>%
 # Plotting Data
 newplot <- ggplot(new_pd, aes(x = Date,y = Frequency)) +
   geom_line()
-plot(newplot)
