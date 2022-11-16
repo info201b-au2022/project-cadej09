@@ -7,7 +7,7 @@ cjdb_years <- cjdb %>%
   select(year, county, CRIME_TOTALS) %>%
   filter(county == "STATE")
 
-cjdb_years_plot <- ggplot(cjdb_years, aes(year, CRIME_TOTALS)) +
+wa_years_plot <- ggplot(cjdb_years, aes(year, CRIME_TOTALS)) +
   geom_point() +
   geom_smooth(method="lm", se=FALSE) +
   labs(title = "CrimeTrend in WA") +
