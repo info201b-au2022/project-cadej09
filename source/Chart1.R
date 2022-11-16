@@ -34,6 +34,19 @@ View(spd)
   #mutate(Frequency = table(StartTime))
 
 # Working with new ideas
+spd_dataset <- spd %>%
+  select(Report.DateTime,Offense.Start.DateTime,Offense.End.DateTime) %>%
+  drop_na() %>%
+  mutate(Date = substr(Report.DateTime, 1, 10)) %>%
+  mutate(Frequency = frequency(Date)) %>%
+  mutate(Date = as.Date(Date, format="%m/%d/%Y" )) %>%
+  filter(Date >= "2017-12-31") %>%
+  select(Report.DateTime,Date) %>%
+  return(spd_dataset)
+
+View(spd_dataset)
+write.csv(spd_dataset,"~/documents/info201/spd_dataset.csv")
+
 new_spd <- spd %>%
   drop_na() %>%
   select(Report.DateTime) %>%
