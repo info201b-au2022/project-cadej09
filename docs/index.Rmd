@@ -9,7 +9,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(DT)
-library(kableExtra)
 library(rmarkdown)
 library(knitr)
 #source("../source/Chart1.R")
@@ -21,16 +20,14 @@ source("../source/Summary_Table.R")
 
 ## Introduction
 
+
 ## Summary
+
 
 ## Tables
 
-```{r cjdb_county_combined, echo=F}
-datatable(cjdb_county_combined)
-```
-
-```{r cjdb_types_combined, echo=F}
-kable(cjdb_types_combined)
+```{r cjdb_combined_table, echo=F}
+datatable(cjdb_combined_table)
 ```
 ## Charts
 
