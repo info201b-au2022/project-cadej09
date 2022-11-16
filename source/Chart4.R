@@ -24,12 +24,8 @@ wa_base <- ggplot(data = wa_state, mapping = aes(x = long, y = lat, group = grou
   coord_fixed(1.3) + geom_polygon(color = "black", fill = "gray")
 
 ditch_the_axis <- theme(
-  axis.text = element_blank(),
-  axis.line = element_blank(),
-  axis.ticks = element_blank(),
   panel.border = element_blank(),
   panel.grid = element_blank(),
-  axis.title = element_blank()
 )
 
 wa_base + ditch_the_axis +
@@ -47,5 +43,6 @@ gg1 <- wa_base +
 
 county_crime <- gg1 + scale_fill_gradient(low = "#000000", high = "#e74c3c", 
                                  breaks = c(0, 2500, 25000, 10000, 225000, 3700000), trans = "log10",  
-                                 name = "# Crimes") 
+                                 name = "# of Crimes") 
 
+county_crime
