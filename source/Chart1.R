@@ -57,12 +57,12 @@ new_spd <- spd_data %>%
 
 new_pd <- new_spd %>%
   drop_na() %>%
-  ungroup() %>%
   select(Date) %>%
   group_by(Date) %>%
   mutate(Frequency = table(Date)) %>%
   mutate(Date = as.Date(Date, format="%m/%d/%Y" )) %>%
-  filter(Date >= "2017-12-31")
+  filter(Date >= "2017-12-31") %>%
+  unique()
 
 
 # Plotting Data

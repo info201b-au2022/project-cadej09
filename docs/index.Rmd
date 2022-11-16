@@ -37,9 +37,7 @@ datatable(cjdb_combined_table)
 plot(newplot)
 ```
 
-I was using our SPD data from our project proposal. Due to making the data fit again on our repository I had to shorten the csv file but I promise I was working with the whole thing at the time of datawrangling. So now, looking at this data we can see crime ranging from the beginning of 2018 to November 2022. The data is a little messy but we can see peaks and and declines of the frequency of crime per date. COVID-19 began in late 2019 and since its beginning we see a large peak in the middle of 2020. We also know that during this time was the beginning of the Black Lives Matter movement which might attribute to this peak of crime since there were a lot more people going outside instead of staying inside during quarantine. THe whole chart seems pretty consistent with the frequency of crime and we only see a drop more recent in later 2022.
-
-### Chart 2
+Looking at this data we can see crime ranging from the beginning of 2018 to November 2022. The data is a little messy but we can see peaks and and declines of the frequency of crime per date. COVID-19 began in late 2019 and since its beginning we see a large peak in the middle of 2020. We also know that during this time was the beginning of the Black Lives Matter movement which might attribute to this peak of crime since there were a lot more people going outside instead of staying inside during quarantine. THe whole chart seems pretty consistent with the frequency of crime and we only see a drop more recent in later 2022.
 
 ```{r king_plot, echo=FALSE}
 plot(king_plot)
@@ -47,7 +45,6 @@ plot(king_plot)
 
 By looking at this chart, we can visualize how the crime rates have changed in King County over the last ten years. The crime seems to have been much higher way before the pandemic happened. When the pandemic hit, the crime rates went lower. The crime rates were on a steep decline up until the pandemic. This may be due to the ecomic decline in seattle that was happening around the same years. 
 
-### Chart 3
 
 ```{r type_crime, echo=F}
 plot(type_crime)

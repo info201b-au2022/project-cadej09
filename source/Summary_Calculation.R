@@ -1,8 +1,6 @@
 library(tidyverse)
 
 cjdb <- read.csv("../data/CJDB90_20.csv")
-nibrs <- read.csv("../data/nibrs_12_20.csv")
-srs <- read.csv("../data/srs_94_19.csv")
 
 cjdb_combined <- cjdb %>%
   mutate(CRIME_TOTALS = SRS_TOTAL + NIB_TOTAL,
@@ -44,6 +42,7 @@ cjdb_types_combined<- cjdb_types_combined %>%
 cjdb_types_combined$MOST_COMMON <- colnames(cjdb_types_combined)[apply(cjdb_types_combined,1,which.max)]
 cjdb_types_combined$LEAST_COMMON <- colnames(cjdb_types_combined)[apply(cjdb_types_combined,1,which.min)]
 
+
 # summary_info.R 
 # A source file that takes in a dataset and returns a list of info about it:
 summary_info <- list()
@@ -71,4 +70,3 @@ summary_info$most_common_crime_wa <- cjdb_types_combined %>%
   select(MOST_COMMON)
 summary_info$least_common_crime_wa <- cjdb_types_combined %>%
   select(LEAST_COMMON)
-
