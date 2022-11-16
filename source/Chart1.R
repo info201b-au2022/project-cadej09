@@ -4,7 +4,7 @@ library("tidyverse")
 # spd has until 2022
 #spd <- read.csv("../data/SPD_Crime_Data_2008-Present.csv")
 #View(spd)
-spd_data <- read.csv("../data/spd_dataset.csv")
+spd_data <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-cadej09/main/data/spd_dataset.csv")
 View(spd_data)
 
 # srs is for 1999-2011
@@ -47,9 +47,9 @@ spd_dataset <- spd %>%
   return(spd_dataset)
 
 View(spd_dataset)
-write.csv(spd_dataset,"~/documents/info201/spd_dataset.csv")
+#write.csv(spd_dataset,"~/documents/info201/spd_dataset.csv")
 
-new_spd <- spd %>%
+new_spd <- spd_data %>%
   drop_na() %>%
   select(Report.DateTime) %>%
   mutate(Date = substr(Report.DateTime, 1, 10)) %>%
@@ -68,3 +68,4 @@ new_pd <- new_spd %>%
 # Plotting Data
 newplot <- ggplot(new_pd, aes(x = Date,y = Frequency)) +
   geom_line()
+plot(newplot)
