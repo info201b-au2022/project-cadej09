@@ -36,7 +36,7 @@ spd_data <- read.csv("../data/spd_dataset.csv")
   #mutate(Frequency = table(StartTime))
 
 # Working with new ideas
-spd_dataset <- spd %>%
+spd_dataset <- spd_data %>%
   select(Report.DateTime,Offense.Start.DateTime,Offense.End.DateTime) %>%
   drop_na() %>%
   mutate(Date = substr(Report.DateTime, 1, 10)) %>%
