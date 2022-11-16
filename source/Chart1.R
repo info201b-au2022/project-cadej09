@@ -2,8 +2,10 @@
 library("tidyverse")
 
 # spd has until 2022
-spd <- read.csv("../data/SPD_Crime_Data_2008-Present.csv")
-View(spd)
+#spd <- read.csv("../data/SPD_Crime_Data_2008-Present.csv")
+#View(spd)
+spd_data <- read.csv("../data/spd_dataset.csv")
+View(spd_data)
 
 # srs is for 1999-2011
 # srs <- read.csv("https://media.githubusercontent.com/media/info201b-au2022/project-cadej09/main/data/srs_94_19.csv")
