@@ -44,5 +44,3 @@ gg1 <- wa_base +
 county_crime <- gg1 + scale_fill_gradient(low = "#000000", high = "#e74c3c", 
                                  breaks = c(0, 2500, 25000, 10000, 225000, 3700000), trans = "log10",  
                                  name = "# of Crimes") 
-
-county_crime
