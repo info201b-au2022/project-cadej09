@@ -9,7 +9,7 @@
 
 library(shiny)
 # source files here
-# example source(file.R)
+source("tabs/Chart1_tab.R")
 
 ui <- navbarPage(
   title = "Live in Safer Washington",
@@ -28,8 +28,7 @@ ui <- navbarPage(
     HTML(" "),
     hr()
   ),
-# example panels from sourced separate files 
-#  tab_panel_intro,
-#  tab_panel_interactive
+  tab_panel_Chart1,
+
   
 )
