@@ -12,7 +12,7 @@ library(shiny)
 # example source(file.R)
 
 ui <- navbarPage(
-  title = "P3",
+  title = "Live in Safer Washington",
   position = "fixed-top",
   
   # A simple header
