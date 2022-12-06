@@ -8,9 +8,10 @@
 #
 
 library(shiny)
+# source files you are going to use here
 
-# Define server logic required to draw a histogram
-shinyServer(function(input, output) {
+# this is the example r sets for us
+server <- shinyServer(function(input, output) {
 
     output$distPlot <- renderPlot({
 

@@ -8,26 +8,28 @@
 #
 
 library(shiny)
+# source files here
+# example source(file.R)
 
-# Define UI for application that draws a histogram
-shinyUI(fluidPage(
-
-    # Application title
-    titlePanel("Old Faithful Geyser Data"),
-
-    # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
-        ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-            plotOutput("distPlot")
-        )
-    )
-))
+ui <- navbarPage(
+  title = "P3",
+  position = "fixed-top",
+  
+  # A simple header
+  header = list(
+    tags$style(type = "text/css", "body {padding-top: 70px;}"),
+    hr(),
+    HTML(" "),
+    hr()
+  ),
+  footer = list(
+    tags$style(type = "text/css", "body {padding-top: 70px;}"),
+    hr(),
+    HTML(" "),
+    hr()
+  ),
+# example panels from sourced separate files 
+#  tab_panel_intro,
+#  tab_panel_interactive
+  
+)
