@@ -94,7 +94,10 @@ get_date_start <- function(start_date) {
 plot_date_start <- function(start_date) {
   plot_start <- get_date_start(start_date) %>%
     ggplot(aes(x=Date, y=Frequency)) +
-    geom_line()
+    geom_line() +
+    ylab("Number of Crimes a Day") +
+    xlab("Date") +
+    labs(
+      title = paste("Crime in Washington from",start_date,"to 2022-10-25"))
   return(plot_start)
 }
-        
