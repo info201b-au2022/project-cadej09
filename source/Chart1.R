@@ -1,6 +1,6 @@
 # Did the crime get worse or better during the years we suffered from COVID-19?
 library("tidyverse")
-
+library(plotly)
 # spd has until 2022
 #spd <- read.csv("../data/SPD_Crime_Data_2008-Present.csv")
 #View(spd)
@@ -61,10 +61,40 @@ new_pd <- new_spd %>%
   group_by(Date) %>%
   mutate(Frequency = table(Date)) %>%
   mutate(Date = as.Date(Date, format="%m/%d/%Y" )) %>%
-  filter(Date >= "2017-12-31") %>%
-  unique()
+  filter(Date >= "2017-12-31")
+new_pd <- unique.data.frame(new_pd)
 
 
 # Plotting Data
 newplot <- ggplot(new_pd, aes(x = Date,y = Frequency)) +
   geom_line()
+
+# working on p3
+start_date <- new_spd %>%
+  drop_na() %>%
+  select(Date) %>%
+  group_by(Date) %>%
+  mutate(Date = as.Date(Date, format="%m/%d/%Y"))
+start_date <- unique.data.frame(start_date)
+start_date <- start_date %>%
+  pull(Date)
+
+get_date_start <- function(start_date) {
+  start <- new_spd %>%
+    drop_na() %>%
+    select(Date) %>%
+    group_by(Date) %>%
+    mutate(Frequency = table(Date)) %>%
+    mutate(Date = as.Date(Date, format="%m/%d/%Y" )) %>%
+    filter(Date >= start_date)
+  start <- unique.data.frame(start)
+  return(start)
+}
+
+plot_date_start <- function(start_date) {
+  plot_start <- get_date_start(start_date) %>%
+    ggplot(aes(x=Date, y=Frequency)) +
+    geom_line()
+  return(plot_start)
+}
+        
