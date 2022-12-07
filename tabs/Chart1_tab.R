@@ -21,7 +21,7 @@ tab_panel_Chart1 <- tabPanel(
     # fluidRow(
     #   column(
     #     6,
-    #     includeHTML("interactive_description.html")
+    #     includeMarkdown()
     #   )
     # )
   )
