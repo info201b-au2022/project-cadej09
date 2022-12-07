@@ -9,6 +9,9 @@
 
 library(shiny)
 source("tabs/Chart1_tab.R")
+source("tabs/intro.R")
+source("tabs/report.R")
+source("tabs/summary.R")
 # source files you are going to use here
 
 # this is the example r sets for us

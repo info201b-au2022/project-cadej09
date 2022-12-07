@@ -28,7 +28,11 @@ ui <- navbarPage(
     HTML(" "),
     hr()
   ),
+  tab_panel_intro,
+  
   tab_panel_Chart1,
 
+  tab_panel_report,
   
+  tab_panel_summary,
 )
