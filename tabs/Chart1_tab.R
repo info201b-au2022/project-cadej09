@@ -9,9 +9,9 @@ tab_panel_Chart1 <- tabPanel(
       sidebarPanel(
         sliderInput("Date",
                     "Dates:",
-                    min = as.Date("2017-12-31","%Y-%m-%d"),
+                    min = as.Date("2018-01-01","%Y-%m-%d"),
                     max = as.Date("2022-10-10","%Y-%m-%d"),
-                    value=as.Date("2017-12-31"),
+                    value=as.Date("2018-01-01"),
                     timeFormat="%Y-%m-%d")
       ),
     mainPanel(

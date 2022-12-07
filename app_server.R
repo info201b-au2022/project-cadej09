@@ -14,6 +14,6 @@ source("tabs/Chart1_tab.R")
 # this is the example r sets for us
 server <- function(input, output) {
 
-    output$covidPlot <- renderPlot(interactive_plot(input$start_date))
+    output$covidPlot <- renderPlot(plot_date_start(input$start_date))
 
 }
