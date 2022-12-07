@@ -75,9 +75,9 @@ start_date <- new_spd %>%
   select(Date) %>%
   group_by(Date)
 start_date <- unique.data.frame(start_date)
-start_date <- start_date %>%
+dates <- start_date %>%
   mutate(Date = as.Date(Date, format="%m/%d/%Y"))
-start_date <- start_date %>%
+dates <- start_date %>%
   pull(Date)
 
 testing <- new_spd %>%
@@ -87,33 +87,35 @@ testing <- new_spd %>%
 testing <- table(testing)
 testing <- as.data.frame(testing)
 testing <- testing %>%
-  mutate(Freq = as.numeric(as.character(Freq))) %>%
+  mutate(Freq = as.numeric(as.character(Freq)))
+testing <- as.data.frame(testing)
+testing <- testing %>%
   left_join(start_date,by="Date")
   
 
-get_date_start <- function(start_date) {
+get_date_start <- function(dates) {
   start <- testing %>%
-    mutate(Date = as.Date(Date, format="%m/%d/%Y")) %>%
-    filter(Date >= start_date)
+    mutate(Date = as.Date(Date, format="%m/%d/%Y"))  %>%
+    filter(Date >= dates)
   start <- unique.data.frame(start)
-  start <- start %>%
-    summarise(Date = Date, Frequency = Freq, .groups = 'drop')
+  # start <- start %>%
+  #   summarise(Date = Date, Frequency = Freq, .groups = 'drop')
   return(start)
 }
 
-plot_date_start <- function(start_date) {
-  plot_start <- get_date_start(start_date) %>%
-    ggplot(aes(x=Date, y=Frequency)) +
+plot_date_start <- function(dates) {
+  plot_start <- get_date_start(dates) %>%
+    ggplot(aes(x=Date, y=Freq)) +
     geom_line() +
     ylab("Number of Crimes a Day") +
     xlab("Date") +
     labs(
-      title = paste("Crime in Washington from",start_date,"to 2022-10-25"))
+      title = paste("Crime in Washington from",dates,"to 2022-10-25"))
   return(plot_start)
 }
 
-interactive_plot <- function(start_date) {
-plottt <- plot_ly(get_date_start(start_date), x = ~Date, y = ~Frequency, type = 'scatter', mode = 'lines') %>%
-  layout(title=paste("Crime in Washington from",start_date,"to 2022-10-25"), yaxis = list(title= 'Number of Crimes a Day'))
+interactive_plot <- function(dates) {
+plottt <- plot_ly(get_date_start(dates), x = ~Date, y = ~Frequency, type = 'scatter', mode = 'lines') %>%
+  layout(title=paste("Crime in Washington from",dates,"to 2022-10-25"), yaxis = list(title= 'Number of Crimes a Day'))
 return(plottt)
 }

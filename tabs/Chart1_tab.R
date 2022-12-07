@@ -7,7 +7,7 @@ tab_panel_Chart1 <- tabPanel(
     titlePanel("Plot looking at Crime data before and during COVID"),
     sidebarLayout(
       sidebarPanel(
-        sliderInput("Date",
+        sliderInput("dates",
                     "Dates:",
                     min = as.Date("2017-12-31","%Y-%m-%d"),
                     max = as.Date("2022-10-10","%Y-%m-%d"),
