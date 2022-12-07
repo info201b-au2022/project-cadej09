@@ -115,7 +115,7 @@ plot_date_start <- function(dates) {
 }
 
 interactive_plot <- function(dates) {
-plottt <- plot_ly(get_date_start(dates), x = ~Date, y = ~Frequency, type = 'scatter', mode = 'lines') %>%
+plottt <- plot_ly(get_date_start(dates), x = ~Date, y = ~Freq, type = 'scatter', mode = 'lines') %>%
   layout(title=paste("Crime in Washington from",dates,"to 2022-10-25"), yaxis = list(title= 'Number of Crimes a Day'))
 return(plottt)
 }
