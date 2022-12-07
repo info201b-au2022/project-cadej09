@@ -10,6 +10,9 @@
 library(shiny)
 # source files here
 source("tabs/Chart1_tab.R")
+source("tabs/intro.R")
+source("tabs/report.R")
+source("summary.R")
 
 ui <- navbarPage(
   title = "Live in Safer Washington",
