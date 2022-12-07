@@ -73,9 +73,10 @@ newplot <- ggplot(new_pd, aes(x = Date,y = Frequency)) +
 start_date <- new_spd %>%
   drop_na() %>%
   select(Date) %>%
-  group_by(Date) %>%
-  mutate(Date = as.Date(Date, format="%m/%d/%Y"))
+  group_by(Date)
 start_date <- unique.data.frame(start_date)
+start_date <- start_date %>%
+  mutate(Date = as.Date(Date, format="%m/%d/%Y"))
 start_date <- start_date %>%
   pull(Date)
 
@@ -85,20 +86,24 @@ testing <- new_spd %>%
   group_by(Date)
 testing <- table(testing)
 testing <- as.data.frame(testing)
+testing <- testing %>%
+  mutate(Freq = as.numeric(as.character(Freq))) %>%
+  left_join(start_date,by="Date")
+  
 
 get_date_start <- function(start_date) {
   start <- testing %>%
-    filter(Date >= start_date) %>%
-    mutate(Date = as.Date(Date, format="%m/%d/%Y" ))
+    mutate(Date = as.Date(Date, format="%m/%d/%Y")) %>%
+    filter(Date >= start_date)
   start <- unique.data.frame(start)
-  # start <- start %>%
-  #   summarise(Date = Date, Frequency = Frequency, .groups = 'drop')
+  start <- start %>%
+    summarise(Date = Date, Frequency = Freq, .groups = 'drop')
   return(start)
 }
 
 plot_date_start <- function(start_date) {
   plot_start <- get_date_start(start_date) %>%
-    ggplot(aes(x=Date, y=Freq)) +
+    ggplot(aes(x=Date, y=Frequency)) +
     geom_line() +
     ylab("Number of Crimes a Day") +
     xlab("Date") +
