@@ -88,6 +88,8 @@ get_date_start <- function(start_date) {
     mutate(Date = as.Date(Date, format="%m/%d/%Y" )) %>%
     filter(Date >= start_date)
   start <- unique.data.frame(start)
+  # start <- start %>%
+  #   summarise(Date = Date, Frequency = Frequency)
   return(start)
 }
 
@@ -100,4 +102,10 @@ plot_date_start <- function(start_date) {
     labs(
       title = paste("Crime in Washington from",start_date,"to 2022-10-25"))
   return(plot_start)
+}
+
+interactive_plot <- function(start_date) {
+plottt <- plot_ly(get_date_start(start_date), x = ~Date, y = ~Frequency, type = 'scatter', mode = 'lines') %>%
+  layout(title=paste("Crime in Washington from",start_date,"to 2022-10-25"), yaxis = list(title= 'Number of Crimes a Day'))
+return(plottt)
 }
