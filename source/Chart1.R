@@ -98,14 +98,14 @@ get_date_start <- function(dates) {
     mutate(Date = as.Date(Date, format="%m/%d/%Y"))  %>%
     filter(Date >= dates)
   start <- unique.data.frame(start)
-  # start <- start %>%
-  #   summarise(Date = Date, Frequency = Freq, .groups = 'drop')
+  start <- start %>%
+    summarise(Date = Date, Frequency = Freq, .groups = 'drop')
   return(start)
 }
 
 plot_date_start <- function(dates) {
   plot_start <- get_date_start(dates) %>%
-    ggplot(aes(x=Date, y=Freq)) +
+    ggplot(aes(x=Date, y=Frequency)) +
     geom_line() +
     ylab("Number of Crimes a Day") +
     xlab("Date") +
@@ -115,7 +115,7 @@ plot_date_start <- function(dates) {
 }
 
 interactive_plot <- function(dates) {
-covid_plotly <- plot_ly(get_date_start(dates), x = ~Date, y = ~Freq, type = 'scatter', mode = 'lines') %>%
+covid_plotly <- plot_ly(get_date_start(dates), x = ~Date, y = ~Frequency, type = 'scatter', mode = 'lines') %>%
   layout(title=paste("Crime in Washington from",dates,"to 2022-10-25"), yaxis = list(title= 'Number of Crimes a Day'))
 return(covid_plotly)
 }
