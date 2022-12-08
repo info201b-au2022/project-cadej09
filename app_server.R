@@ -15,7 +15,7 @@ source("tabs/report.R")
 source("tabs/summary.R")
 # source files you are going to use here
 
-# this is the example r sets for us
+
 server <- function(input, output) {
 
   # Liz chart
