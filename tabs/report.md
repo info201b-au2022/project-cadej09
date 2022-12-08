@@ -54,6 +54,7 @@ Most of the limitations we would have would come from a lack of data. For instan
 
 ## Findings:
 Give answers to each of your research questions. (About 400 words.)
+- For our research question about COVID and crime rates we can see that there was a peak of crime in early 2020 when COVID was just arriving to the United States of America.
 
 ## Discussion:
 Discuss importance and/or implications of your findings (About 400 words.)
