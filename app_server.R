@@ -42,4 +42,22 @@ server <- function(input, output) {
            height = 300,
            alt = "Let's Go")
     }, deleteFile = F)
+    
+    output$img <- renderImage({
+      # Return a list containing the filename
+      list(src = "www/img.png",
+           contentType = 'image/png',
+           width = 400,
+           height = 300,
+           alt = "Vehicle Theft")
+    }, deleteFile = F)
+    
+    output$trend <- renderImage({
+      # Return a list containing the filename
+      list(src = "www/trend.png",
+           contentType = 'image/png',
+           width = 400,
+           height = 300,
+           alt = "trend")
+    }, deleteFile = F)
 }

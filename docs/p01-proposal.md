@@ -27,7 +27,7 @@ We believe that businesses that have direct connection to the advanced technolog
   - Seattle is a big city and has a lot of crime. It is helpful to narrow down the area where crime occurs so that researchers can focus their attention to a smaller region and get more accurate data. Washington is a large state and if a lot of the crime is concentrated in one city, we can dive deeper into Seattle itself.
 - Did the crime get worse or better during the years we suffered from COVID-19?
   - This is important to know because finding patterns can help us prevent something from happening in the future. We can anticipate crime rates going up or down when specific events occur and plan accordingly. This will save our community and economy from dealing with negative consequences more than once for the same issue.
-- What kind of or type of crime is most common in Washington State? Seattle?
+- What kind of or type of crime is most common in Washington State?
   - In order to research what is efficient or not, we should know what kind of crime is most common. It will help us narrow down our focus on how to implement changes in policies to prevent future crimes.
 
 ## The Dataset:
