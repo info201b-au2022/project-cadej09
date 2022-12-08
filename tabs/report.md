@@ -54,7 +54,7 @@ Most of the limitations we would have would come from a lack of data. For instan
 
 ## Findings:
 Give answers to each of your research questions. (About 400 words.)
-- For our research question about COVID and crime rates we can see that there was a peak of crime in early 2020 when COVID was just arriving to the United States of America. After the pandemic began we can also see the variety in high and low crime days being drastically different rather than being closer together in numbers prior to 2020. We can tell that crime changed since COVID came to our state and there is a slight increase of crime after the intense peak during early 2020.
+- For our research question, **Did the crime get worse or better during the years we suffered from COVID-19?** We can see that there was a peak of crime in early 2020 when COVID was just arriving to the United States of America. After the pandemic began we can also see the variety in high and low crime days being drastically different rather than being closer together in numbers prior to 2020. We can tell that crime changed since COVID came to our state and there is a slight increase of crime after the intense peak during early 2020. Looking later at the data when our society is believing COVID is ending, we can see a decrease in crime around mid to late 2022.
 
 ## Discussion:
 Discuss importance and/or implications of your findings (About 400 words.)
