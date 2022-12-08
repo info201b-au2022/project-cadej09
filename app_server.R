@@ -9,6 +9,7 @@
 
 library(shiny)
 source("tabs/Chart1_tab.R")
+source("source/Summary_Table.R")
 source("tabs/intro.R")
 source("tabs/report.R")
 source("tabs/summary.R")
@@ -18,5 +19,9 @@ source("tabs/summary.R")
 server <- function(input, output) {
 
     output$covidPlot <- renderPlot(plot_date_start(input$dates))
+    
+    output$table = DT::renderDataTable({
+      cjdb_combined_table
+    })
 
 }

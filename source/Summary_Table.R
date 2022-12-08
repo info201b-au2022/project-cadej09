@@ -1,6 +1,6 @@
 library(tidyverse)
 
-cjdb <- read.csv("../data/CJDB90_20.csv")
+cjdb <- read.csv("data/CJDB90_20.csv")
 
 cjdb_combined_table <- cjdb %>%
   mutate(CRIME_TOTALS = SRS_TOTAL + NIB_TOTAL,

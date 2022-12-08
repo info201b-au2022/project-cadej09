@@ -52,6 +52,15 @@ If we answer our research questions some expected implications would be about th
 ## Limitations:
 Most of the limitations we would have would come from a lack of data. For instance if we want to answer our question about which neighborhoods in Seattle have the most crime, we might not come across data that would aid in answering this question. We can address this by changing our question or by expanding the question into something we can address multiple cities in Washington with. Limitations could also come from gathering information from a bias source that may not have reliable data. We have to make sure that all data we collect and store is from an unbiased source and will help us answer our questions effectively.
 
+## Findings:
+Give answers to each of your research questions. (About 400 words.)
+
+## Discussion:
+Discuss importance and/or implications of your findings (About 400 words.)
+
+## Conclusion:
+Give the reader a summary point, the key point that you will like your audience to leave with. (About 400 words.)
+
 ## Acknowledgement:
 ## References:
 - Data. Washington State Statistical Analysis Center. (n.d.). Retrieved October 31, 2022, from https://sac.ofm.wa.gov/data

@@ -1,7 +1,7 @@
 library(shiny)
 
 tab_panel_summary <- tabPanel(
-  fluidPage(
-    
-  )
+  "Summary",
+  p("Simply presents some summary information for a data frame."),
+  DT::dataTableOutput("table")
 )
