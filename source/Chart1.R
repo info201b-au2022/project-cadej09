@@ -97,9 +97,10 @@ get_date_start <- function(dates) {
   start <- testing %>%
     mutate(Date = as.Date(Date, format = "%m/%d/%Y")) %>%
     filter(Date >= dates)
-  start <- unique.data.frame(start)
+  # start <- unique.data.frame(start)
   start <- start %>%
-    summarise(Date = Date, Frequency = Freq, .groups = "drop")
+    summarise(Date = Date, Frequency = Freq, .groups = "drop") %>%
+    arrange(Date)
   return(start)
 }
 
