@@ -2,6 +2,9 @@ library(shiny)
 
 tab_panel_summary <- tabPanel(
   "Summary",
-  p("Simply presents some summary information for a data frame."),
-  DT::dataTableOutput("table")
+  h1("Sumary Takeaways from Our Project"),
+  p("This is a table about number of crimes and arrests by counties in WA state."),
+  DT::dataTableOutput("table"),
+  
+  
 )
