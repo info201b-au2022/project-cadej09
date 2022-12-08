@@ -6,6 +6,10 @@ tab_panel_Chart1 <- tabPanel(
   "Crime during COVID",
   fluidPage(
     titlePanel("Plot looking at Crime data before and during COVID"),
+    fluidRow(
+      column(4,
+             includeMarkdown("tabs/Chart1_sum.md"))
+    )),
     sidebarLayout(
       sidebarPanel(
         sliderInput("dates",
@@ -17,12 +21,6 @@ tab_panel_Chart1 <- tabPanel(
       ),
     mainPanel(
       plotOutput("covidPlot")
-    ),
-    # fluidRow(
-    #   column(
-    #     6,
-    #     includeMarkdown()
-    #   )
-    # )
+    )
   )
-))
+)
