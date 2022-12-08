@@ -58,6 +58,7 @@ Give answers to each of your research questions. (About 400 words.)
 
 ## Discussion:
 Discuss importance and/or implications of your findings (About 400 words.)
+-For our research question, **Did the crime get worse or better during the years we suffered from COVID-19?** it is important to note social movements occurring towards the beginning of 2020. In June of 2020 we see the rise of the Black Lives Matter movement and its protests that people took advantage of and committed crimes during. Since the peak of the movement in June we can see an increase of crimes but also the remnants of the beginning of the movement. It had a large impact on the population, positively and negatively and unfortunately, crime might have derived from that. Positively, we can see a decrease of crime towards our current day and hopefully that trend continues.
 
 ## Conclusion:
 Give the reader a summary point, the key point that you will like your audience to leave with. (About 400 words.)
