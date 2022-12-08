@@ -5,9 +5,9 @@ account: cadej09
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 7851131
-bundleId: 6612229
+bundleId: 6612434
 url: https://cadej09.shinyapps.io/project-cadej09/
-when: 1670532106.33327
-lastSyncTime: 1670532106.33329
+when: 1670533400.32879
+lastSyncTime: 1670533400.32882
 asMultiple: FALSE
 asStatic: FALSE

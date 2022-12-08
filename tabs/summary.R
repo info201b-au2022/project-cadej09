@@ -11,7 +11,7 @@ tab_panel_summary <- tabPanel(
      for the policymakers to look at when making new changes and seeing if it had a positive effect or not.
      If they can continue to implement new policies and eventually the trend of crimes in Washington over year
      gets lower than 5664, then that means their new policies were very much effective and the citizens will feel safer."),
-  imageOutput("tred"),
+  imageOutput("trend"),
   
   h2("How Many of Crimes is In or Near Seattle?"),
   p("This is a table about number of crimes and arrests by counties in WA state."),
