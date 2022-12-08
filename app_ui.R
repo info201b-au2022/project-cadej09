@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(shinythemes)
 # source files here
 source("tabs/Chart1_tab.R")
 source("tabs/intro.R")
@@ -15,6 +16,7 @@ source("tabs/report.R")
 source("tabs/summary.R")
 
 ui <- navbarPage(
+  theme = shinytheme("flatly"),
   title = "Live in Safer Washington",
   position = "fixed-top",
   
