@@ -18,6 +18,7 @@ source("tabs/summary.R")
 # this is the example r sets for us
 server <- function(input, output) {
 
+  # Liz chart
     output$covidPlot <- renderPlot(plot_date_start(input$dates))
     
     output$table = DT::renderDataTable({
