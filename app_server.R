@@ -21,8 +21,25 @@ server <- function(input, output) {
   # Liz chart
     output$covidPlot <- renderPlot(plot_date_start(input$dates))
     
-    output$table = DT::renderDataTable({
+    output$table <- DT::renderDataTable({
       cjdb_combined_table
     })
-
+    
+    output$img1 <- renderImage({
+      # Return a list containing the filename
+      list(src = "www/img1.jpeg",
+           contentType = 'image/jpeg',
+           width = 400,
+           height = 300,
+           alt = "Prevent Crime")
+    }, deleteFile = F)
+    
+    output$img2 <- renderImage({
+      # Return a list containing the filename
+      list(src = "www/img2.png",
+           contentType = 'image/png',
+           width = 400,
+           height = 300,
+           alt = "Let's Go")
+    }, deleteFile = F)
 }
