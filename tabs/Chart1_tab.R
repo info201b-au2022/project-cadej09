@@ -7,7 +7,7 @@ tab_panel_Chart1 <- tabPanel(
   fluidPage(
     titlePanel("Plot looking at Crime data before and during COVID"),
     fluidRow(
-      column(4,
+      column(10,
              includeMarkdown("tabs/Chart1_sum.md"))
     )),
     sidebarLayout(
