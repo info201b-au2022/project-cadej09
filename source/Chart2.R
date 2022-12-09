@@ -7,8 +7,7 @@ Crimecategories <- read.csv("data/nibrs_12_20.csv")
 options(max.print = 90000)
 
 #view the data set
-View("data/nibrs_12_20.csv")
-
+View(Crimecategories)
 #extract rows that include Seattle
 crimes_in_seattle <- Crimecategories [c(936), ]
 #print(crimes_in_seattle)
@@ -35,7 +34,6 @@ type_crime <- ggplot(crimes_2020) +
 
 View(type_crime)
 plot(type_crime)
-rm(list = ls())
 
 # calculate a mean for it 
 #summary_of_crimes_in_seattle <- summarize (
