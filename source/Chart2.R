@@ -61,3 +61,4 @@ type_crime <- ggplot(crimes_2020) +
 #print(summary_of_crimes_in_seattle)
 
 #View(summary_of_crimes_in_seattle)
+
