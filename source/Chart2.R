@@ -1,5 +1,6 @@
 library(tidyverse)
 library(plotly)
+
 #bring the csv file into the working directory. 
 
 Crimecategories <- read.csv("data/nibrs_12_20.csv")

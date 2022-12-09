@@ -1,7 +1,7 @@
 library(shiny)
 library("markdown")
 Crimecategories <- read.csv("data/nibrs_12_20.csv")
-source("source/Chart2.R")
+
 
 tab_panel_Chart2 <- tabPanel(
   "Categories of crime",
