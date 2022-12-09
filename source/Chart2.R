@@ -4,7 +4,7 @@ library(plotly)
 #bring the csv file into the working directory. 
 
 Crimecategories <- read.csv("data/nibrs_12_20.csv")
-options(max.print = 90000)
+options(max.print = 90000) 
 
 #view the data set
 View(Crimecategories)
