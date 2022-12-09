@@ -14,7 +14,7 @@ source("tabs/Chart1_tab.R")
 source("tabs/intro.R")
 source("tabs/report.R")
 source("tabs/summary.R")
-
+source("tabs/Chart2_tab.R")
 
 ui <- navbarPage(
   theme = shinytheme("flatly"),
@@ -37,8 +37,11 @@ ui <- navbarPage(
   tab_panel_intro,
   
   tab_panel_Chart1,
+  
+  tab_panel_Chart2,
 
   tab_panel_report,
   
   tab_panel_summary,
+  
 )

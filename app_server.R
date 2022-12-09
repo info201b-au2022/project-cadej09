@@ -13,6 +13,7 @@ source("source/Summary_Table.R")
 source("tabs/intro.R")
 source("tabs/report.R")
 source("tabs/summary.R")
+source("tabs/Chart2_tab.R")
 # source files you are going to use here
 
 
