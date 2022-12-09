@@ -62,4 +62,6 @@ server <- function(input, output) {
            height = 300,
            alt = "trend")
     }, deleteFile = F)
+    
+    
 }

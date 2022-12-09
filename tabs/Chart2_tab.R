@@ -1,7 +1,6 @@
 library(shiny)
 library("markdown")
-
-
+source("source/Chart2.R")
 
 tab_panel_Chart2 <- tabPanel(
   "Categories of crime",
