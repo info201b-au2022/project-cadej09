@@ -1,14 +1,11 @@
 library(shiny)
 library("markdown")
-
 library(tidyverse)
 library(plotly)
 
 
 Crimecategories <- read.csv("data/nibrs_12_20.csv")
 options(max.print = 900000000) 
-
-View(Crimecategories)
 
 crimes_in_seattle <- Crimecategories [c(936), ]
 
@@ -26,14 +23,8 @@ crimes_2020 <- data.frame(
 type_crime <- ggplot(crimes_2020) +
   geom_col(mapping = aes(x = categories, y = incidence, fill = categories))
 
-View(type_crime)
-plot(type_crime)
-
-
 #source("data/nibrs_12_20.csv")
-source(source/Chart2.R)
-
-
+source("source/Chart2.R")
 
 tab_panel_Chart2 <- tabPanel(
   "Categories of crime",
