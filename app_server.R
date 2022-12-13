@@ -22,8 +22,13 @@ server <- function(input, output) {
   # Liz chart
     output$covidPlot <- renderPlot(plot_date_start(input$dates))
     
-    output$typecrime <- renderPlot(crimes_2020(incidence))
-    
+    output$type_crime <- renderPlot({
+      barplot(crimes_2020[,input$categories],
+              main=input$categories,
+              ylab = "Incedences",
+              xlab = "Categories")
+     })
+      
     output$table <- DT::renderDataTable({
       cjdb_combined_table
     })

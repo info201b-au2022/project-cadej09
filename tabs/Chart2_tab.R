@@ -20,6 +20,9 @@ crimes_2020 <- data.frame(
   categories = c("MURDER", "MANSLAUGHTER", "FORCIBLE_SEX", "ASSULT","NON_FORCIBLE_SEX","KIDNAPPING_ABDUCTION", "HUMAN_TRAFFICKING", "VIOL_OF_NO_CONTACT","ARSON", "BIBERY", "BURGLARY", "COUNTERFEITING_FORGERY", "DESTRUCTION_OF_PROPERTY", "EXTORTION_BLACKMAIL", "ROBBERY", "THEFT","DRUG_VIOLATIONS", "GAMBLING_VIOLATION", "PORNOGRAPHY", "PROTITUTION", "WEAPON_LAW_VIOLATION", "ANIMAL_CRUELTY"),
   incidence = c(52, 16, 520, 11632, 4, 147, 14, 1353, 209, 1, 10548, 374, 6641, 106, 1489, 40163, 1021, 1, 40, 29, 614, 28))
 
+
+
+
 type_crime <- ggplot(crimes_2020) +
   geom_col(mapping = aes(x = categories, y = incidence, fill = categories))
 
@@ -37,19 +40,11 @@ tab_panel_Chart2 <- tabPanel(
   )),
   sidebarLayout(
     sidebarPanel(
-      sliderInput("range",
-                  label = "Number of observations:",
-                  value = 10, min = 1, max = 2357)
-      ),
-      mainPanel(
-        h3(textOutput("caption")),
-        plotOutput("type_crime")
-      )
+      selectInput("categories", "Categories:",
+                  choices = colnames(crimes_2020),
+    )),
+    mainPanel(
+      plotOutput("type_crime"),
     )
-  )
+  ))
 
-
-
-
-
- 
