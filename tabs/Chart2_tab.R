@@ -23,6 +23,7 @@ crimes_2020 <- data.frame(
 type_crime <- ggplot(crimes_2020) +
   geom_col(mapping = aes(x = categories, y = incidence, fill = categories))
 
+
 #source("data/nibrs_12_20.csv")
 source("source/Chart2.R")
 
