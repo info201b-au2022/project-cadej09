@@ -1,6 +1,6 @@
 library(shiny)
 library("markdown")
-<<<<<<< HEAD
+
 library(tidyverse)
 library(plotly)
 
