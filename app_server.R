@@ -25,7 +25,8 @@ server <- function(input, output) {
     output$type_crime <- renderPlot({
       barplot(crimes_2020[,input$categories],
               main=input$categories,
-              ylab = "Incedences",
+              ylab = "incedence",
+              "MURDER" = 58,
               xlab = "Categories")
      })
       

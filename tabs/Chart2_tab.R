@@ -41,7 +41,8 @@ tab_panel_Chart2 <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       selectInput("categories", "Categories:",
-                  choices = colnames(crimes_2020),
+                  choices = select(crimes_2020,
+                                   categories),
     )),
     mainPanel(
       plotOutput("type_crime"),
